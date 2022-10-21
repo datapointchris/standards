@@ -1,5 +1,49 @@
 # Github Standards
 
+## Workflow
+``` bash
+
+# New feature
+git checkout develop
+git pull
+git checkout -b feature/{feature-description}
+git add .
+# Use conventional commits
+# TODO: Make a link here for the conventional commits
+git commit "feat: Fixes/Adds/etc (issue #)"
+
+# Rebase daily
+git checkout develop
+git pull
+git checkout feature/{feature-description}
+git rebase develop
+
+# Feature is done
+git checkout develop
+git merge feature/{feature-description}
+
+# Create a release with feature(s)
+git checkout develop
+git checkout -b release/v1.1.1 - {version description}
+./prepare-release.sh  # project dependent
+git add -A
+git commit -m "release: {version} - {version description}"
+git tag '{version}'
+
+# Merge release into master
+git checkout master
+git merge release/{version} - {version description}
+
+# Merge master into develop
+git checkout develop
+git merge master
+
+```
+
+__Daily:__
+git checkout feature/feature-description
+
+
 TODO: Organize and incorporate the following:
 https://github.com/dbt-labs/corp/blob/main/git-guide.md
 
