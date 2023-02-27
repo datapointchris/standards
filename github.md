@@ -19,6 +19,8 @@ git checkout feature/{feature-description}
 git rebase develop
 
 # Feature is done
+# TODO: Make pull request
+
 git checkout develop
 git merge feature/{feature-description}
 
@@ -39,6 +41,8 @@ git checkout develop
 git merge master
 
 ```
+Create a release on github using the tag and pull request to auto-populate.
+
 
 __Daily:__
 git checkout feature/feature-description
